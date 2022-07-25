@@ -1,0 +1,22 @@
+{
+  "name": "indecision-app",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "normalize.css": "^8.0.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.15.1"
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.6.2",
+    "parcel": "latest",
+    "process": "^0.11.10"
+  }
+}
