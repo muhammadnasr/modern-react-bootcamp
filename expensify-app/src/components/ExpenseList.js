@@ -1,10 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
-import store from '../store/configureStore'
 
-export default ExpenseList = () => {
+const ExpenseList = () => {
 
-  let expenses = store.getState().expenses
+  const expenses = useSelector((state) => state.expenses)
 
   return (
     <div>
@@ -16,4 +16,6 @@ export default ExpenseList = () => {
     </div>
   );
 }
+
+export default ExpenseList
 
