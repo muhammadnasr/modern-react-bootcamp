@@ -11,7 +11,14 @@ const ExpenseListItem = ({ id }) => {
       <Link to={`/edit/${id}`}>
         <h3>{expense.description}</h3>
       </Link>
-      <p>{expense.amount} - {moment(expense.createdAt).fromNow()}</p>
+      <p>
+        {new Intl.NumberFormat('en-US', {
+          style: 'currency',
+          currency: 'USD'
+        }).format(expense.amount)}
+        -
+        {moment(expense.createdAt).fromNow()}
+      </p>
     </div>
   )
 };
