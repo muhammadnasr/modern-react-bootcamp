@@ -5,7 +5,7 @@ import Header from './Header';
 import Options from './Options';
 import OptionModal from './OptionModal';
 
-export default class IndecisionApp extends React.Component {
+class IndecisionApp extends React.Component {
   state = {
     options: [],
     selectedOption: undefined
@@ -61,7 +61,7 @@ export default class IndecisionApp extends React.Component {
     console.log('componentWillUnmount');
   }
   render() {
-    const subtitle = 'Put your life in the hands of a computer';
+    const subtitle = 'To decide or not to decide!';
 
     return (
       <div>
@@ -90,3 +90,5 @@ export default class IndecisionApp extends React.Component {
     );
   }
 }
+
+export default IndecisionApp

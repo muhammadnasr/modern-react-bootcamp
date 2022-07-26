@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class AddOption extends React.Component {
+class AddOption extends React.Component {
   state = {
     error: undefined
   };
@@ -27,3 +27,5 @@ export default class AddOption extends React.Component {
     );
   }
 }
+
+export default AddOption

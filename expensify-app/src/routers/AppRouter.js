@@ -9,7 +9,7 @@ import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
 
-export default AppRouter = () => (
+AppRouter = () => (
     <BrowserRouter>
         <Header/>
         <Routes>
@@ -21,3 +21,5 @@ export default AppRouter = () => (
         </Routes>
     </BrowserRouter>
 )
+
+export default AppRouter
