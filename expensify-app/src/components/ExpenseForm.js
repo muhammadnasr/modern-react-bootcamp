@@ -4,7 +4,7 @@ const ExpenseForm = (props) => {
 
   let [expense, setExpense] = useState(props.expense)
 
-  onChange = (e) => {
+  const onChange = (e) => {
     const { id, value } = e.target;
 
     if (id == 'amount' && (!value || !value.match(/^\d{1,}(\.\d{0,2})?$/))) {
@@ -16,7 +16,7 @@ const ExpenseForm = (props) => {
     })
   }
 
-  onSubmit = (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     props.onSubmit(expense);
   }
