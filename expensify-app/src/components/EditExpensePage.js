@@ -13,12 +13,13 @@ const EditExpensePage = (props) => {
   const expense = useSelector((state) => state.expenses.entities[id])
 
   //TODO navigate to '/' if expense in undefined
-
+  //TODO implement datapicker for createdAt
   return (
     <div>
       <ExpenseForm
         expense={expense}
         onSubmit={(expense) => {
+          //todo: use upsert instead of update and insert
           dispatch(updateExpense({ id: expense.id, changes: expense }))
           navigate('/')
         }}
