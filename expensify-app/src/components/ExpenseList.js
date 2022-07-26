@@ -1,19 +1,21 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import ExpenseListItem from './ExpenseListItem';
+import ExpensesTotal from './ExpensesSummary';
 
 const ExpenseList = () => {
 
-  const expenses = useSelector((state) => state.expenses)
+  const expensesIDs = useSelector((state) => state.expenses.ids)
 
   return (
     <div>
-      <h1>Expense List</h1>
       {
-        expenses.ids.map((id) => {
+        expensesIDs.map((id) => {
           return <ExpenseListItem key={id} id={id} />;
-        })}
+        })
+      }
     </div>
+
   );
 }
 

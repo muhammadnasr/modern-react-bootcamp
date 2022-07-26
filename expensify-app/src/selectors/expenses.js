@@ -18,3 +18,14 @@ export default (expenses, { text, sortBy, startDate, endDate }) => {
     }
   });
 };
+
+const totalExpenses = (expenses) =>  {
+  if(!expenses.length){
+    return 0
+  }
+
+  return expenses.map(expense => expense.amount).reduce((previousAmount,amount) => (previousAmount + amount))
+}
+
+export {totalExpenses}
+
