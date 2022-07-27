@@ -1,14 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
-import { useSelector } from 'react-redux';
 
-const ExpenseListItem = ({ id }) => {
-  const expense = useSelector((state) => state.expenses.entities[id])
+const ExpenseListItem = ({ expense }) => {
 
   return (
     <div>
-      <Link to={`/edit/${id}`}>
+      <Link to={`/edit/${expense.id}`}>
         <h3>{expense.description}</h3>
       </Link>
       <p>

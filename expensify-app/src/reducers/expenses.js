@@ -1,18 +1,23 @@
 // Expenses Slice
-import { createSlice, createEntityAdapter } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createEntityAdapter } from '@reduxjs/toolkit'
 
-const expenseAdapter = createEntityAdapter();
+const expensesAdapter = createEntityAdapter();
 
 const { reducer, actions } = createSlice({
   name: 'expenses',
-  initialState: expenseAdapter.getInitialState(),
+  initialState: expensesAdapter.getInitialState(),
   reducers: {
-    addExpense: expenseAdapter.addOne,
-    updateExpense: expenseAdapter.updateOne,
-    removeExpense: expenseAdapter.removeOne,
+    addExpense: expensesAdapter.addOne,
+    updateExpense: expensesAdapter.updateOne,
+    removeExpense: expensesAdapter.removeOne,
   }
 });
 
 export const { addExpense, updateExpense, removeExpense } = actions
+
+export const {
+  selectAll: selectAllExpenses,
+  selectById: selectExpenseById,
+} = expensesAdapter.getSelectors((state) => state.expenses)
 
 export default reducer

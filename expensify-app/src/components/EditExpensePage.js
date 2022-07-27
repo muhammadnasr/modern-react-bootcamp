@@ -3,6 +3,7 @@ import ExpenseForm from './ExpenseForm';
 import { updateExpense, removeExpense } from '../reducers/expenses';
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
+import { selectExpenseById } from '../reducers/expenses';
 
 const EditExpensePage = (props) => {
 
@@ -10,7 +11,7 @@ const EditExpensePage = (props) => {
   const dispatch = useDispatch()
 
   const { id } = useParams()
-  const expense = useSelector((state) => state.expenses.entities[id])
+  const expense = useSelector((state) => selectExpenseById(state,id))
 
   //TODO navigate to '/' if expense in undefined
   //TODO implement datapicker for createdAt
