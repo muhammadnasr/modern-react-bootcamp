@@ -8,16 +8,18 @@ import EditExpensePage from '../components/EditExpensePage';
 import HelpPage from '../components/HelpPage';
 import NotFoundPage from '../components/NotFoundPage';
 import Header from '../components/Header';
+import LoginPage from '../components/LoginPage';
 
 const AppRouter = () => (
     <BrowserRouter>
-        <Header/>
+        <Header />
         <Routes>
-            <Route path="/" element={<ExpenseDashboardPage />} />
+            <Route path="/" element={<LoginPage />} />
+            <Route path="/dashboard" element={<ExpenseDashboardPage />} />
             <Route path="/create" element={<AddExpensePage />} />
             <Route path="/edit/:id" element={<EditExpensePage />} />
-            <Route path="/help" element={<HelpPage />} />
-            <Route path="*" element={<NotFoundPage />} />   
+            <Route path="/help" element={(props) => ( <Redirect to="/create"/>)()} />
+            <Route path="*" element={<NotFoundPage />} />
         </Routes>
     </BrowserRouter>
 )

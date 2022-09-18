@@ -1,6 +1,6 @@
 import React from 'react';
 import ExpenseForm from './ExpenseForm';
-import { useNavigate, useParams, } from "react-router-dom";
+import { useNavigate, useParams, Navigate } from "react-router-dom";
 import { useDatabase, useDatabaseObjectData } from 'reactfire'
 import { ref, set, remove } from 'firebase/database'
 
@@ -33,17 +33,26 @@ const EditExpensePage = (props) => {
   }
 
   return (
-    <div>
-      <ExpenseForm
-        expense={expense}
-        onSubmit={(expense) => {
-          updateExpense(expense)
-        }}
-      />
-      <button onClick={() => {
-        deleteExpense(id)
-      }}>Remove</button>
-    </div>
+    expense ?
+      (
+        <div>
+          <ExpenseForm
+            expense={expense}
+            onSubmit={(expense) => {
+              updateExpense(expense)
+            }}
+          />
+          <button onClick={() => {
+            deleteExpense(id)
+          }}>Remove</button>
+        </div>
+      )
+      : (
+        <div>
+          <div>Invalid ID</div>
+          <Navigate to='/' replace />
+        </div>
+      )
   )
 }
 
